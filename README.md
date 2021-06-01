@@ -1,5 +1,4 @@
-# tkinter-scale
-Tkinterのscaleに関するコード
+# tkinter-scrollbar
+Tkinterのscrollbarに関するコード
 
 # 参考記事
-https://kuroro.blog/python/DUvG7YaE2i6jLwCxdPXJ/
