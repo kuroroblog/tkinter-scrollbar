@@ -10,27 +10,31 @@ class Application(tk.Frame):
         self.master.geometry("300x200")
 
         # Windowを親要素として、frame Widget(Frame)を作成する。
-        # frameについて : https://kuroro.blog/python/P20XOidA5nh583fYRvxf/
+        # Frameについて : https://kuroro.blog/python/P20XOidA5nh583fYRvxf/
         frame = tk.Frame(self.master)
 
-        # Windowを親要素とした場合に、frame Widgetをどのように配置するのか?
+        # Windowを親要素とした場合に、frame Widget(Frame)をどのように配置するのか?
         # packについて : https://kuroro.blog/python/UuvLfIBIEaw98BzBZ3FJ/
         frame.pack()
 
+        # 1. text Widgetの作成
         # frame Widget(Frame)を親要素として、text Widgetを作成する。
         # height : 高さを設定
         # Textについて : https://kuroro.blog/python/bK6fWsP9LMqmER1CBz9E/
         text = tk.Text(frame, height=4)
 
+        # 2. scrollbar Widgetの作成
         # frame Widget(Frame)を親要素として、scrollbar Widgetを作成する。
         # orient : 垂直方向へscrollbarを作成するように設定する。
         # command : scrollbarを動かした場合に、連動して表示する内容を設定する。今回は、text Widgetをy軸方向に動かした内容を表示する。
         scrollbar = tk.Scrollbar(frame, orient=tk.VERTICAL, command=text.yview)
 
+        # 3. scrollbar Widgetをtext Widgetに反映する
         # scrollbar Widgetの設定内容をtext Widgetと紐付ける。
         # yscrollcommand : text Widget内で上下移動した場合に、scrollbarが追従するように設定する。
         text["yscrollcommand"] = scrollbar.set
 
+        # 4. text Widget, scrollbar Widgetを配置
         # frame Widget(Frame)を親要素とした場合に、text Widgetをどのように配置するのか?
         # gridについて : https://kuroro.blog/python/JoaowDiUdLAOj3cSBxiX/
         text.grid(row=0, column=0)
