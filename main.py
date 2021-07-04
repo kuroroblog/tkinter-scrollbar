@@ -25,8 +25,8 @@ class Application(tk.Frame):
 
         # 2. scrollbar Widgetの作成
         # frame Widget(Frame)を親要素として、scrollbar Widgetを作成する。
-        # orient : 垂直方向へscrollbarを作成するように設定する。
-        # command : scrollbarを動かした場合に、連動して表示する内容を設定する。今回は、text Widgetをy軸方向に動かした内容を表示する。
+        # orient option : 垂直scrollbarを作成するため、tk.VERTICALを設定。水平scrollbarの場合は、tk.HORIZONTALを設定する。
+        # command option : scrollbar Widgetを動かした場合に、連動して表示する内容を設定。今回は、text Widgetをy軸方向に動かした内容を表示する。
         scrollbar = tk.Scrollbar(frame, orient=tk.VERTICAL, command=text.yview)
 
         # 3. scrollbar Widgetをtext Widgetに反映する
